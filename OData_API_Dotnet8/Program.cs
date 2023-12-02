@@ -20,7 +20,7 @@ namespace OData_API_Dotnet8
 
             // Add services to the container.
 
-            builder.Services.AddControllers().AddOData(opt => opt.AddRouteComponents("v1", GetEdmModel()).Filter().Select().Expand().Count().OrderBy());
+            builder.Services.AddControllers().AddOData(opt => opt.AddRouteComponents("v1", GetEdmModel()).Filter().Select().Expand().Count().OrderBy().SetMaxTop(100));
 
             builder.Services.AddScoped<EmployeeService>();
 
