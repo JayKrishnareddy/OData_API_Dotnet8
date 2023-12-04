@@ -15,7 +15,7 @@ namespace OData_API_Dotnet8.Controllers
         {
                 _employeeService = employeeService;
         }
-        [EnableQuery(PageSize =5)]
+        [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.Filter | AllowedQueryOptions.OrderBy)]
         public IActionResult Get() => Ok(_employeeService.GetEmployees());
     }
 }
